@@ -29,7 +29,7 @@ def hello():
         def run(self):
             while not self.stopIt:
                 msg = self.mrecv()
-                print 'recieved->  ', + msg
+                print('recieved->  ', + msg)
 
     def setConn(con1,con2):
         dict={}
@@ -64,7 +64,7 @@ def hello():
         while 1:
             msend(dict['send'],raw_input())
     except:
-        print 'closing'
+        print('closing')
     thr.stopIt=True
     msend(dict['send'],'bye!!!')# for stoping the thread
     thr.conn.close()
@@ -89,7 +89,7 @@ class client(threading.Thread):
     def run(self):
         while not self.stopIt:
             msg = self.mrecv()
-            print 'recieved-> ',msg
+            print('recieved-> ', + msg)
 
 soc1 = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 soc1.connect(('127.0.0.1',5432))
@@ -115,7 +115,7 @@ try:
     while 1:
         msend(soc1,raw_input())
 except:
-    print 'closing'
+    print('closing')
 thr.stopIt=True
 msend(soc1,'bye!!') # for stoping the thread
 thr.conn.close()
